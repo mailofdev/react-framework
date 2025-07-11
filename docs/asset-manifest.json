@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/react-framework/static/css/main.76fd167f.css",
+    "main.js": "/react-framework/static/js/main.4cbc1f00.js",
+    "static/css/430.58fba3f1.chunk.css": "/react-framework/static/css/430.58fba3f1.chunk.css",
+    "static/js/430.001d0831.chunk.js": "/react-framework/static/js/430.001d0831.chunk.js",
+    "static/css/278.bb991852.chunk.css": "/react-framework/static/css/278.bb991852.chunk.css",
+    "static/js/278.b6fc47d9.chunk.js": "/react-framework/static/js/278.b6fc47d9.chunk.js",
+    "static/css/359.2eac4b8e.chunk.css": "/react-framework/static/css/359.2eac4b8e.chunk.css",
+    "static/js/359.0ff2c73c.chunk.js": "/react-framework/static/js/359.0ff2c73c.chunk.js",
+    "static/css/43.ff18ebab.chunk.css": "/react-framework/static/css/43.ff18ebab.chunk.css",
+    "static/js/43.fc3eec91.chunk.js": "/react-framework/static/js/43.fc3eec91.chunk.js",
+    "static/js/453.259c2cc0.chunk.js": "/react-framework/static/js/453.259c2cc0.chunk.js",
+    "index.html": "/react-framework/index.html",
+    "main.76fd167f.css.map": "/react-framework/static/css/main.76fd167f.css.map",
+    "main.4cbc1f00.js.map": "/react-framework/static/js/main.4cbc1f00.js.map",
+    "430.58fba3f1.chunk.css.map": "/react-framework/static/css/430.58fba3f1.chunk.css.map",
+    "430.001d0831.chunk.js.map": "/react-framework/static/js/430.001d0831.chunk.js.map",
+    "278.bb991852.chunk.css.map": "/react-framework/static/css/278.bb991852.chunk.css.map",
+    "278.b6fc47d9.chunk.js.map": "/react-framework/static/js/278.b6fc47d9.chunk.js.map",
+    "359.2eac4b8e.chunk.css.map": "/react-framework/static/css/359.2eac4b8e.chunk.css.map",
+    "359.0ff2c73c.chunk.js.map": "/react-framework/static/js/359.0ff2c73c.chunk.js.map",
+    "43.ff18ebab.chunk.css.map": "/react-framework/static/css/43.ff18ebab.chunk.css.map",
+    "43.fc3eec91.chunk.js.map": "/react-framework/static/js/43.fc3eec91.chunk.js.map",
+    "453.259c2cc0.chunk.js.map": "/react-framework/static/js/453.259c2cc0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.76fd167f.css",
+    "static/js/main.4cbc1f00.js"
+  ]
+}

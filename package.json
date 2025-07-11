@@ -2,7 +2,7 @@
   "name": "react-framework",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mailofdev.github.io/react-framework",
+  "homepage": "https://mailofdev.github.io/react-framework/",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -21,7 +21,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "master -d build"
+    "deploy": "gh-pages -d build",
+    "deploy-master": "node deploy-to-master.js",
+    "deploy-docs": "./deploy-docs.sh"
   },
   "eslintConfig": {
     "extends": [
@@ -42,6 +44,6 @@
     ]
   },
   "devDependencies": {
-    "master": "^6.3.0"
+    "gh-pages": "^6.3.0"
   }
 }
