@@ -1,272 +1,70 @@
-# React Framework
+# Getting Started with Create React App
 
-A scalable, maintainable, and well-organized React framework designed for enterprise-level applications.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## 🏗️ Project Structure
+## Available Scripts
 
-```
-react-framework/
-├── 📁 src/                          # Source code directory
-│   ├── 📁 components/               # Reusable UI components
-│   │   ├── 📁 common/              # Shared components used across the app
-│   │   │   ├── 📁 Button/
-│   │   │   ├── 📁 Input/
-│   │   │   ├── 📁 Modal/
-│   │   │   └── 📁 index.ts         # Barrel export for common components
-│   │   ├── 📁 layout/              # Layout components (Header, Sidebar, Footer)
-│   │   ├── 📁 forms/               # Form-specific components
-│   │   ├── 📁 data-display/        # Tables, Lists, Cards, etc.
-│   │   ├── 📁 navigation/          # Navigation components
-│   │   └── 📁 feedback/            # Alerts, Notifications, Loading states
-│   │
-│   ├── 📁 pages/                   # Page-level components (Route components)
-│   │   ├── 📁 auth/                # Authentication pages
-│   │   ├── 📁 dashboard/           # Dashboard pages
-│   │   ├── 📁 user/                # User management pages
-│   │   └── 📁 index.ts             # Barrel export for pages
-│   │
-│   ├── 📁 hooks/                   # Custom React hooks
-│   │   ├── 📁 api/                 # API-related hooks
-│   │   ├── 📁 form/                # Form-related hooks
-│   │   ├── 📁 state/               # State management hooks
-│   │   └── 📁 ui/                  # UI-related hooks
-│   │
-│   ├── 📁 services/                # Business logic and external services
-│   │   ├── 📁 api/                 # API service layer
-│   │   │   ├── 📁 endpoints/       # API endpoint definitions
-│   │   │   ├── 📁 interceptors/    # Request/response interceptors
-│   │   │   └── 📁 client.ts        # HTTP client configuration
-│   │   ├── 📁 auth/                # Authentication services
-│   │   ├── 📁 storage/             # Local storage, session storage
-│   │   └── 📁 external/            # Third-party service integrations
-│   │
-│   ├── 📁 store/                   # State management (Redux, Zustand, etc.)
-│   │   ├── 📁 slices/              # Redux slices or state modules
-│   │   ├── 📁 middleware/          # Custom middleware
-│   │   ├── 📁 selectors/           # State selectors
-│   │   └── 📁 index.ts             # Store configuration
-│   │
-│   ├── 📁 utils/                   # Utility functions and helpers
-│   │   ├── 📁 constants/           # Application constants
-│   │   ├── 📁 helpers/             # Helper functions
-│   │   ├── 📁 validators/          # Validation utilities
-│   │   └── 📁 formatters/          # Data formatting utilities
-│   │
-│   ├── 📁 types/                   # TypeScript type definitions
-│   │   ├── 📁 api/                 # API-related types
-│   │   ├── 📁 components/          # Component prop types
-│   │   ├── 📁 store/               # State management types
-│   │   └── 📁 global.ts            # Global type definitions
-│   │
-│   ├── 📁 styles/                  # Global styles and theme
-│   │   ├── 📁 theme/               # Design system and theming
-│   │   ├── 📁 global/              # Global CSS/SCSS
-│   │   └── 📁 variables/           # CSS variables and design tokens
-│   │
-│   ├── 📁 assets/                  # Static assets
-│   │   ├── 📁 images/              # Image files
-│   │   ├── 📁 icons/               # Icon files
-│   │   ├── 📁 fonts/               # Font files
-│   │   └── 📁 documents/           # PDFs, docs, etc.
-│   │
-│   ├── 📁 config/                  # Configuration files
-│   │   ├── 📁 routes/              # Route definitions
-│   │   ├── 📁 api/                 # API configuration
-│   │   └── 📁 app/                 # App-level configuration
-│   │
-│   ├── 📁 providers/               # React context providers
-│   │   ├── 📁 auth/                # Authentication provider
-│   │   ├── 📁 theme/               # Theme provider
-│   │   └── 📁 app/                 # App-level providers
-│   │
-│   ├── 📁 guards/                  # Route guards and protection
-│   │   ├── 📁 auth/                # Authentication guards
-│   │   └── 📁 role/                # Role-based access control
-│   │
-│   ├── 📁 constants/               # Application-wide constants
-│   │   ├── 📁 api.ts               # API constants
-│   │   ├── 📁 routes.ts            # Route constants
-│   │   └── 📁 app.ts               # App constants
-│   │
-│   ├── 📁 tests/                   # Test utilities and mocks
-│   │   ├── 📁 mocks/               # Mock data and functions
-│   │   ├── 📁 setup/               # Test setup files
-│   │   └── 📁 utils/               # Test utility functions
-│   │
-│   ├── 📁 App.tsx                  # Main App component
-│   ├── 📁 index.tsx                # Application entry point
-│   └── 📁 index.css                # Global styles entry point
-│
-├── 📁 public/                      # Public assets and HTML template
-│   ├── 📁 assets/                  # Public assets (favicon, manifest, etc.)
-│   └── 📁 index.html               # HTML template
-│
-├── 📁 docs/                        # Project documentation
-│   ├── 📁 architecture/            # Architecture documentation
-│   ├── 📁 components/              # Component documentation
-│   ├── 📁 api/                     # API documentation
-│   ├── 📁 deployment/              # Deployment guides
-│   └── 📁 contributing/            # Contributing guidelines
-│
-├── 📁 scripts/                     # Build and deployment scripts
-│   ├── 📁 build/                   # Build-related scripts
-│   ├── 📁 deploy/                  # Deployment scripts
-│   └── 📁 utils/                   # Utility scripts
-│
-├── 📁 .github/                     # GitHub workflows and templates
-│   ├── 📁 workflows/               # CI/CD workflows
-│   └── 📁 ISSUE_TEMPLATE/          # Issue templates
-│
-├── 📁 config/                      # Build and tool configuration
-│   ├── 📁 webpack/                 # Webpack configuration
-│   ├── 📁 babel/                   # Babel configuration
-│   ├── 📁 typescript/              # TypeScript configuration
-│   └── 📁 eslint/                  # ESLint configuration
-│
-├── 📁 .husky/                      # Git hooks
-├── 📁 .vscode/                     # VS Code settings
-├── 📁 package.json                 # Dependencies and scripts
-├── 📁 tsconfig.json                # TypeScript configuration
-├── 📁 .eslintrc.js                 # ESLint configuration
-├── 📁 .prettierrc                  # Prettier configuration
-├── 📁 .gitignore                   # Git ignore rules
-└── 📁 README.md                    # Project documentation
-```
+In the project directory, you can run:
 
-## 📋 Folder Descriptions
+### `npm start`
 
-### 🧩 Components (`src/components/`)
-- **common/**: Reusable UI components used throughout the application
-- **layout/**: Layout components like Header, Sidebar, Footer, and page layouts
-- **forms/**: Form-specific components and form builders
-- **data-display/**: Components for displaying data (tables, lists, cards, charts)
-- **navigation/**: Navigation components (menus, breadcrumbs, pagination)
-- **feedback/**: User feedback components (alerts, notifications, loading states)
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### 📄 Pages (`src/pages/`)
-- Page-level components that correspond to routes
-- Each page is a container that combines multiple components
-- Supports lazy loading for code splitting
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-### 🎣 Hooks (`src/hooks/`)
-- **api/**: Custom hooks for API calls and data fetching
-- **form/**: Form-related hooks (validation, submission, field management)
-- **state/**: State management hooks
-- **ui/**: UI-related hooks (modals, tooltips, etc.)
+### `npm test`
 
-### 🔧 Services (`src/services/`)
-- **api/**: HTTP client, API endpoints, and request/response handling
-- **auth/**: Authentication and authorization services
-- **storage/**: Local storage, session storage, and caching services
-- **external/**: Third-party service integrations
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### 📦 Store (`src/store/`)
-- State management configuration (Redux, Zustand, Context API)
-- **slices/**: State slices or modules
-- **middleware/**: Custom middleware for state management
-- **selectors/**: State selectors for data access
+### `npm run build`
 
-### 🛠️ Utils (`src/utils/`)
-- **constants/**: Application constants and enums
-- **helpers/**: Helper functions and utilities
-- **validators/**: Validation functions and schemas
-- **formatters/**: Data formatting and transformation utilities
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### 📝 Types (`src/types/`)
-- TypeScript type definitions organized by domain
-- **api/**: API-related types and interfaces
-- **components/**: Component prop types
-- **store/**: State management types
-- **global.ts**: Global type definitions
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-### 🎨 Styles (`src/styles/`)
-- **theme/**: Design system, theming, and design tokens
-- **global/**: Global CSS/SCSS styles
-- **variables/**: CSS variables and design tokens
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### 🖼️ Assets (`src/assets/`)
-- Static assets like images, icons, fonts, and documents
-- Organized by file type for easy management
+### `npm run eject`
 
-### ⚙️ Config (`src/config/`)
-- **routes/**: Route definitions and navigation configuration
-- **api/**: API configuration and endpoint management
-- **app/**: Application-level configuration
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-### 🔄 Providers (`src/providers/`)
-- React context providers for global state and services
-- **auth/**: Authentication context
-- **theme/**: Theme context
-- **app/**: Application-level context
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-### 🛡️ Guards (`src/guards/`)
-- Route protection and access control
-- **auth/**: Authentication guards
-- **role/**: Role-based access control
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-## 🚀 Key Features
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-### Code Splitting & Lazy Loading
-- Pages are automatically code-split using React.lazy()
-- Components can be lazy-loaded based on usage
-- Dynamic imports for better performance
+## Learn More
 
-### Modularity
-- Each folder has a clear, single responsibility
-- Barrel exports (index.ts) for clean imports
-- Consistent naming conventions
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-### Scalability
-- Supports micro-frontend architecture
-- Easy to add new features without restructuring
-- Clear separation of concerns
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Maintainability
-- Consistent file and folder naming
-- Clear documentation for each folder
-- TypeScript support throughout
+### Code Splitting
 
-## 📚 Documentation Structure
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### `/docs/` Directory
-- **architecture/**: System architecture, design patterns, and decisions
-- **components/**: Component library documentation and usage guides
-- **api/**: API documentation and integration guides
-- **deployment/**: Deployment procedures and environment setup
-- **contributing/**: Development guidelines and contribution process
+### Analyzing the Bundle Size
 
-## 🛠️ Development Workflow
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-1. **Component Development**: Create components in appropriate folders under `src/components/`
-2. **Page Creation**: Add new pages in `src/pages/` with corresponding routes
-3. **State Management**: Add state slices in `src/store/slices/`
-4. **API Integration**: Create services in `src/services/api/`
-5. **Styling**: Use the design system in `src/styles/theme/`
-6. **Testing**: Write tests alongside components and services
+### Making a Progressive Web App
 
-## 📦 Getting Started
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-```bash
-# Install dependencies
-npm install
+### Advanced Configuration
 
-# Start development server
-npm start
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-# Build for production
-npm run build
+### Deployment
 
-# Run tests
-npm test
-```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-## 🔧 Configuration
+### `npm run build` fails to minify
 
-The framework includes configuration files for:
-- TypeScript (`tsconfig.json`)
-- ESLint (`.eslintrc.js`)
-- Prettier (`.prettierrc`)
-- Webpack (custom configuration)
-- Babel (custom configuration)
-
-This structure provides a solid foundation for building scalable React applications while maintaining code quality and developer experience.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

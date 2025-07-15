@@ -1,3 +1,0 @@
-// Input component exports
-export { default as Input } from './Input';
-export type { InputProps } from './Input.types'; 
