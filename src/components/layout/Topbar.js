@@ -1,11 +1,14 @@
 import React from "react";
 import routes from "../navigation/Routes";
+import { Link, useLocation } from "react-router-dom";
 
 const Topbar = ({
   showSearch = true,
   showNavMenu = true,
   showUserMenu = true,
 }) => {
+  const location = useLocation();
+
   const handleRouteClick = (item) => {
     console.log("Button clicked:", item);
 
@@ -13,61 +16,55 @@ const Topbar = ({
       // TODO: call logout API
       console.log("Triggering logout API...");
     } else {
-      // Simulate navigation or any logic
       console.log("Navigating to:", item.href);
     }
   };
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary px-3 shadow-sm sticky-top fixed-top">
-      <div className="container-fluid">
+      <div className="container-fluid d-flex justify-content-between align-items-center">
         {/* Brand */}
-        <a className="navbar-brand d-flex align-items-center fw-bold" href="#">
-          MyApp
-        </a>
+        <Link to="/" className="navbar-brand fw-bold">
+          MyPortfolio
+        </Link>
 
-        {/* Toggle button for mobile sidebar */}
+        {/* Toggle button for mobile */}
         <button
           className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#sidebarMenu"
-          aria-controls="sidebarMenu"
+          data-bs-target="#navbarContent"
+          aria-controls="navbarContent"
           aria-expanded="false"
-          aria-label="Toggle sidebar"
+          aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Collapsible Navbar */}
-        <div className="collapse navbar-collapse" id="navbarContent">
-          {/* Left nav menu */}
+        {/* Center Menu Items */}
+        <div className="collapse navbar-collapse justify-content-center" id="navbarContent">
           {showNavMenu && (
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
               {routes
                 .filter((item) => item.showIn?.includes("topbar"))
                 .map((item, idx) => (
                   <li className="nav-item" key={idx}>
-                    <a
+                    <Link
+                      to={item.href}
                       className={`nav-link d-flex align-items-center px-3 py-2 ${
-                        item.active ? "active" : ""
+                        location.pathname === item.href ? "active" : ""
                       } ${item.danger ? "text-danger" : ""}`}
-                      href={item.href}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleRouteClick(item);
-                      }}
+                      onClick={() => handleRouteClick(item)}
                     >
                       {item.icon && <i className={`bi ${item.icon} me-2`}></i>}
                       {item.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
             </ul>
           )}
-
-          {/* Search form */}
-          {showSearch && (
+        </div>
+        {showSearch && (
             <form className="d-flex me-lg-3 my-2 my-lg-0" role="search">
               <input
                 className="form-control me-2"
@@ -80,65 +77,49 @@ const Topbar = ({
               </button>
             </form>
           )}
-
-          {/* Right User menu */}
-          {showUserMenu && (
-            <ul className="navbar-nav mb-2 mb-lg-0">
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle d-flex align-items-center"
-                  href="#"
-                  id="userDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <img
-                    src="https://i.pravatar.cc/30"
-                    alt="avatar"
-                    className="rounded-circle me-2"
-                    width="30"
-                    height="30"
-                  />
-                  <span>User</span>
-                </a>
-                <ul
-                  className="dropdown-menu dropdown-menu-end"
-                  aria-labelledby="userDropdown"
-                >
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Profile
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Settings
-                    </a>
-                  </li>
-                  <li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                  <li>
-                    <a
-                      className="dropdown-item"
-                      href="#"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleRouteClick({ label: "Logout" });
-                      }}
-                    >
-                      Logout
-                    </a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          )}
-        </div>
+        {/* Right - User Menu */}
+        {showUserMenu && (
+          <ul className="navbar-nav mb-2 mb-lg-0">
+            <li className="nav-item dropdown">
+              <button
+                className="nav-link dropdown-toggle d-flex align-items-center bg-transparent border-0"
+                id="userDropdown"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  src="https://i.pravatar.cc/30"
+                  alt="avatar"
+                  className="rounded-circle me-2"
+                  width="30"
+                  height="30"
+                />
+                <span className="text-white">User</span>
+              </button>
+              <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                <li>
+                  <button className="dropdown-item" type="button">Profile</button>
+                </li>
+                <li>
+                  <button className="dropdown-item" type="button">Settings</button>
+                </li>
+                <li><hr className="dropdown-divider" /></li>
+                <li>
+                  <button
+                    className="dropdown-item"
+                    type="button"
+                    onClick={() => handleRouteClick({ label: "Logout" })}
+                  >
+                    Logout
+                  </button>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        )}
       </div>
 
-      {/* Custom hover/active styling */}
+      {/* Custom Styling */}
       <style jsx="true">{`
         .navbar-nav .nav-link {
           transition: background 0.3s, color 0.3s;
@@ -151,7 +132,8 @@ const Topbar = ({
 
         .navbar-nav .nav-link.active {
           font-weight: 600;
-          border-bottom: 2px solid white;
+          border-bottom: 2px solid gold;
+          color: black;
         }
       `}</style>
     </nav>

@@ -10,7 +10,7 @@ const MainLayout = ({ children, config }) => {
 
   return (
     <div className="d-flex flex-column min-vh-100">
-      {cfg.showTopbar && <Topbar showSearch={false} showNavMenu={true} showUserMenu={true} />}
+      {cfg.showTopbar && <Topbar showSearch={false} showNavMenu={true} showUserMenu={false} />}
       <div className="container-fluid flex-grow-1">
         <div className="row">
           {cfg.showSidebar && (
