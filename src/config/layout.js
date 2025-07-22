@@ -1,7 +1,7 @@
 const layoutConfig = {
   showSidebar: true,
   showTopbar: true,
-  showFooter: true,
+  showFooter: false,
 };
 
 export default layoutConfig; 
