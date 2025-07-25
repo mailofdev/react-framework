@@ -10,7 +10,7 @@ import Skills from "./features/skills/Skills";
 function App() {
   return (
     <Router>
-      <MainLayout config={{ showTopbar: true, showSidebar: true, showFooter: true }}>
+      <MainLayout config={{ showTopbar: true, showSidebar: false, showFooter: false }}>
         <Routes>
         <Route path="/" element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />

@@ -1,5 +1,5 @@
 const layoutConfig = {
-  showSidebar: true,
+  showSidebar: false,
   showTopbar: true,
   showFooter: false,
 };

@@ -4,10 +4,8 @@ import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = () => {
   const location = useLocation();
-  const handleRouteClick = (item) => {
-    // if (item.label === "Skills") {
-      console.log("Navigating to page", item.label);
-    // } 
+  const handleRouteClick = (item) => { 
+      console.log("Navigating to page", item.label); 
   };
 
   return (

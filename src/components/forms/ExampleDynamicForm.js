@@ -87,12 +87,7 @@ const columns = [
   { key: "title", label: "Title" },
   { key: "email", label: "Email" },
   { key: "select", label: "Select" },
-  { key: "date", label: "Date" },
-  { key: "date", label: "Date" },
-  { key: "date", label: "Date" },
-  { key: "date", label: "Date" },
-  { key: "date", label: "Date" },
-
+  { key: "date", label: "Date" }
 ];
 
 const ExampleDynamicForm = () => {
@@ -136,7 +131,6 @@ const ExampleDynamicForm = () => {
     
   ]);
 
-  // Add or Edit handler
   const handleFormSubmit = async (row, mode, idx) => {
     try {
       if (mode === "add") {
@@ -144,15 +138,14 @@ const ExampleDynamicForm = () => {
       } else if (mode === "edit" && idx != null) {
         setData(prev => prev.map((item, i) => (i === idx ? { ...item, ...row } : item)));
       }
-      return true; // close the form
+      return true;
     } catch (err) {
       throw new Error("Failed to save data. Please try again.");
     }
   };
 
   return (
-    <div className="container mt-4">
-      <h3 className="mb-4">Dynamic Table + Form CRUD Example</h3>
+    <div className="container mt-4"> 
       <DynamicTable
         columns={columns}
         data={data}

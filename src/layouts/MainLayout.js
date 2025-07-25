@@ -5,12 +5,12 @@ import Topbar from '../components/layout/Topbar';
 import Footer from '../components/layout/Footer';
 
 const MainLayout = ({ children, config }) => {
-  // Allow per-page override
+
   const cfg = { ...layoutConfig, ...config };
 
   return (
     <div className="d-flex flex-column min-vh-100">
-      {cfg.showTopbar && <Topbar showSearch={false} showNavMenu={true} showUserMenu={true} />}
+      {cfg.showTopbar && <Topbar showSearch={false} showNavMenu={true} showUserMenu={false} showThemeToggle={true} />}
       <div className="container-fluid flex-grow-1">
         <div className="row">
           {cfg.showSidebar && (
@@ -21,7 +21,7 @@ const MainLayout = ({ children, config }) => {
           </main>
         </div>
       </div>
-      {/* {cfg.showFooter && <Footer />} */}
+      {cfg.showFooter && <Footer />}
     </div>
   );
 };
