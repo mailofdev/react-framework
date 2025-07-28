@@ -271,7 +271,7 @@ const DynamicTable = ({ columns = [], data = [], formSchema = [], onRowSelect, o
         </table>
       </div>
        <div className="d-flex justify-content-between align-items-center mb-2 gap-2 ms-2 me-2">
-        <div className="text-muted fs-6 fw-bold text-center w-auto me-2 ms-2 align-items-center d-flex">
+        <div className=" fs-6 fw-bold text-center w-auto me-2 ms-2 align-items-center d-flex">
         Total records: {data?.length}
         </div>
         {renderPagination()}

@@ -6,7 +6,7 @@ const NotFound = () => {
       <div>
         <h1>😕</h1>
         <h3>Oops! Page Not Found</h3>
-        <p className="text-muted">The page you're looking for doesn't exist.</p>
+        <p className="">The page you're looking for doesn't exist.</p>
       </div>
     </div>
   );

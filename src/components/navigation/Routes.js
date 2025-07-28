@@ -1,9 +1,14 @@
 const routes = [
   {
-    label: 'Dashboard',
-    href: '/dashboard',
+    label: 'Home',
+    href: '/home',
     icon: 'bi-house-door-fill', // Represents home/overview
-    active: true,
+    showIn: ['sidebar', 'topbar'],
+  },
+  {
+    label: 'About',
+    href: '/about',
+    icon: 'bi-info-circle-fill', // Represents information/about
     showIn: ['sidebar', 'topbar'],
   },
   {

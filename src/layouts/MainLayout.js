@@ -10,11 +10,11 @@ const MainLayout = ({ children, config }) => {
 
   return (
     <div className="d-flex flex-column min-vh-100">
-      {cfg.showTopbar && <Topbar showSearch={false} showNavMenu={true} showUserMenu={false} showThemeToggle={true} />}
+      {cfg.showTopbar && <Topbar showSearch={false} showNavMenu={true} showUserMenu={false} showThemeToggle={true} showIcons={true} singlePageWebsite={true} />}
       <div className="container-fluid flex-grow-1">
         <div className="row">
           {cfg.showSidebar && (
-            <Sidebar />
+            <Sidebar showIcons={true} />
           )}
           <main className={cfg.showSidebar ? "col-md-10 ms-sm-auto px-4" : "col-12 px-4"}>
             {children}

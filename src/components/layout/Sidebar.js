@@ -1,11 +1,8 @@
-import React from "react";
 import routes from "../navigation/Routes";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const Sidebar = () => {
-  const location = useLocation();
+const Sidebar = ({showIcons}) => {
   const handleRouteClick = (item) => { 
-      console.log("Navigating to page", item.label); 
   };
 
   return (
@@ -21,12 +18,10 @@ const Sidebar = () => {
               <li className="nav-item" key={idx}>
                 <Link
                   to={item.href}
-                  className={`nav-link d-flex align-items-center px-3 py-2 ${
-                    location.pathname === item.href ? "active" : ""
-                  } ${item.danger ? "text-danger" : ""}`}
+                  className={`nav-link d-flex align-items-center px-3 py-2  ${item.danger ? "text-danger" : ""}`}
                   onClick={() => handleRouteClick(item)}
                 >
-                  {item.icon && <i className={`bi ${item.icon} me-2`}></i>}
+                  {showIcons && item.icon && <i className={`bi ${item.icon} me-2`}></i>}
                   {item.label}
                 </Link>
               </li>
