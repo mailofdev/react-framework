@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/react-framework/ankits-portfolio-website/static/css/main.9124c65f.css",
+    "main.js": "/react-framework/ankits-portfolio-website/static/js/main.8aeb61c3.js",
+    "static/js/453.259c2cc0.chunk.js": "/react-framework/ankits-portfolio-website/static/js/453.259c2cc0.chunk.js",
+    "static/media/ankit.png": "/react-framework/ankits-portfolio-website/static/media/ankit.b0c6774045c005e30bf1.png",
+    "index.html": "/react-framework/ankits-portfolio-website/index.html",
+    "main.9124c65f.css.map": "/react-framework/ankits-portfolio-website/static/css/main.9124c65f.css.map",
+    "main.8aeb61c3.js.map": "/react-framework/ankits-portfolio-website/static/js/main.8aeb61c3.js.map",
+    "453.259c2cc0.chunk.js.map": "/react-framework/ankits-portfolio-website/static/js/453.259c2cc0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9124c65f.css",
+    "static/js/main.8aeb61c3.js"
+  ]
+}
