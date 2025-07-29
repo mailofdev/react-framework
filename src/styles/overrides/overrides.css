@@ -40,6 +40,14 @@ body {
   border-color: var(--color-primary);
   color: #fff;
 }
+.btn[class*="btn-"]:hover,
+.btn[class*="btn-"]:focus,
+.btn[class*="btn-"].active {
+  /* background-color: var(--color-bg) !important; */
+  border-color: var(--color-border) !important;
+  color: var(--color-bg) !important;
+}
+
 .btn-secondary {
   background-color: var(--color-secondary);
   border-color: var(--color-secondary);
